@@ -1,0 +1,60 @@
+package maihao.librarysystem;
+
+import java.nio.file.attribute.DosFileAttributes;
+import java.util.Scanner;
+
+public class Config {
+
+    public static Scanner scanner = new Scanner(System.in);
+    public static final String INITIAL_INTERFACE = "欢迎来到图书馆！";
+    public static final String SYSTEM_VERSION = "v1.0";
+    public static final String REGISTER = "---输入“1”进行新用户注册---输入“2”用户登录---";
+    public static final String LOGIN_NAME = "请输入用户名: ";
+    public static final String LOGIN_PASSWORD = "请输入密码:";
+    public static final String HAS_REGISTERED = "用户名已注册，请重试...";
+    public static final String REGISTRY_SUCCESSFULLY = "注册成功！";
+    public static final String LOGIN_SUCCESSFULLY = "登录成功！";
+    public static final String LOGIN_FAILED = "登录失败，请重试";
+    public static final String USER_CHOICE = "---输入“1”还书---输入“2”借书---输入“3”查询书籍信息";
+    public static final String SEARCH_BY_TYPE = "---输入”1“进行分类查询---输入“2”跳过分类查询---";
+    public static final String RETURN_BOOK_TAG = "---输入需要还书的编号即可还书，如“1”---";
+    public static final String SEARCH_BY_STRING_TYPE = "输入需要查询的类型:";
+    public static final String BOOK_TYPE_COMIC = "漫画:comic";
+    public static final String BOOK_TYPE_NOVEL = "小说:novel";
+    public static final String RETURN_SUCCESSFULLY = "还书成功";
+    public static final String WITHOUT_BOOK = "你还没有借过书哦~";
+    public static final String BOOK_TYPE_PROGRAMMING = "编程:programming";
+    public static final String USER_ALL_BOOKS = "已借书籍列表:";
+    public static final String ASK_USER1 = "是否需要继续借书或还书？---是，请输入”1“---否，请输入”2“---";
+    public static final String LIBRARY_ALL_BOOKS = "上架书籍列表:";
+    public static final String BORROW_BOOK = "---输入书籍所在的书架编号，再输入对应书架上书籍的编号即可借书--";
+    public static final String LIBRARY_SHELF_TAG = "书架编号:";
+    public static final String LIBRARY_BOOK_TAG = "书籍编号:";
+    public static final String LIBRARY_SEARCH_BY_TYPE = "---输入”1“进行分类查询---输入“2”跳过分类查询---";
+    public static final String LIBRARY_SEARCH_BY_SHELF = "---输入”1“指定书架查询---输入“2”跳过指定书架查询---";
+    public static final String BORROW_SUCCESSFULLY = "借书成功！";
+    public static final String ADMINISTRATOR_LOGIN = "登录管理员账号:";
+    public static final String ADMINISTRATOR_LOGIN_SUCCESSFULLY = "管理员登录成功! ";
+    public static final String ADMINISTRATOR_CHOICE = "请选择一项管理员操作:";
+    public static final String ADMINISTRATOR_1 = "“1”书籍的上下架";
+    public static final String ADMINISTRATOR_1_CHOICE = "---“1”上架---“2”下架---";
+    public static final String ADMINISTRATOR_1_1_CHOICE = "可以上架的书有:";
+    public static final String ADMINISTRATOR_1_2_CHOICE = "可以下架的书有:";
+    public static final String ADMINISTRATOR_1_1_TURN = "输入书籍编号和上架到书架的编号";
+    public static final String ADMINISTRATOR_1_2_TURN = "输入下架书籍的书架编号和书籍编号";
+    public static final String ADMINISTRATOR_2 = "“2”书籍的创建和删除";
+    public static final String ADMINISTRATOR_2_CHOICE = "---“1”创建---“2”删除---";
+    public static final String ADMINISTRATOR_2_1_CHOICE = "创建新书的类型:";
+    public static final String NEW_SUCCESSFULLY = "创建成功！";
+    public static final String ADMINISTRATOR_2_2_CHOICE = "---输入书籍编号即可删除书籍---ps:删除书籍请先将书籍下架---";
+    public static final String DELETE_SUCCESSFULLY = "删除成功！";
+    public static final String ADMINISTRATOR_3 = "“3”管理用户黑名单";
+    public static final String ADMINISTRATOR_3_CHOICE = "---“1”添加黑名单---“2”删除黑名单---";
+    public static final String USERNAME_BLACK = "---请输入进入黑名单的用户名---";
+    public static final String USERNAME_OUT_BLACK = "---请输入移除黑名单的用户名---";
+    public static final String IN_BLACKLIST = "你是黑名单用户，如有问题请联系管理员处理";
+    public static final String ADMINISTRATOR_4 = "“4”退出";
+    public static final String THANKS_FOR_USE = "谢谢使用图书馆系统！";
+    public static final String SEARCH_BOOK_BASE = "输入书架编号和对应的书籍编号，查看书籍信息";
+    public static final String SEARCH_BOOK_DETAILS = "输入“1”查询详细信息";
+}
