@@ -16,11 +16,11 @@ public class Main {
         LibSystem.get().adminLogin();
 
         //创建五本书到availableShelf
-        LibSystem.get().createBook("aaa", 111, Book.COMIC, "aaaAuthor", "aaaIntro");//0
-        LibSystem.get().createBook("bbb", 222, Book.NOVEL, "bbbAuthor", "bbbIntro", "bLeadRole");//1
-        LibSystem.get().createBook("ccc", 333, Book.COMIC, "cccAuthor", "cccIntro");//2
-        LibSystem.get().createBook("ddd", 444, Book.PROGRAMMING, "Java", "www.hao123.com");//3
-        LibSystem.get().createBook("eee", 555, Book.NOVEL, "eeeAuthor", "eeeIntro", "eLeadRole");//4
+        LibSystem.get().createBook("aaa", 111, Book.COMIC, "aaaAuthor", "aaaIntro---");//0
+        LibSystem.get().createBook("bbb", 222, Book.NOVEL, "bbbAuthor", "bbbIntro", "bLeadRole---");//1
+        LibSystem.get().createBook("ccc", 333, Book.COMIC, "cccAuthor", "cccIntro---");//2
+        LibSystem.get().createBook("ddd", 444, Book.PROGRAMMING, "Java", "www.hao123.com---");//3
+        LibSystem.get().createBook("eee", 555, Book.NOVEL, "eeeAuthor", "eeeIntro", "eLeadRole---");//4
 
 
         //创建三个书架
@@ -52,7 +52,7 @@ public class Main {
 //        }
 
         Iterator<Book> bookIteratorA = LibSystem.get().getLibrary().getBookSelf(0).getBooks().listIterator();
-        while(bookIteratorA.hasNext()) {
+        while (bookIteratorA.hasNext()) {
             LibSystem.get().currentUser.borrowBook(bookIteratorA.next());
             bookIteratorA.remove();
         }
@@ -87,7 +87,7 @@ public class Main {
 //            LibSystem.get().currentUser.borrowBook(book);
 //        }
         Iterator<Book> bookIteratorB = LibSystem.get().getLibrary().getBookSelf(0).getBooks().listIterator();
-        while(bookIteratorB.hasNext()) {
+        while (bookIteratorB.hasNext()) {
             LibSystem.get().currentUser.borrowBook(bookIteratorB.next());
             bookIteratorB.remove();
         }
@@ -148,82 +148,6 @@ public class Main {
         LibSystem.get().userLogin("b", "bbb");
         //输出b的所有书
         System.out.println("b的所有书" + LibSystem.get().currentUser.getMyBorrowedBooks().toString());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        String username = scanner.next();
-//        String password = scanner.next();
-//        LibSystem.get().userLogin(username, password);
-//
-//        int choice1 = scanner.nextInt();
-//        if (choice1 == 1) {//借书还书
-//
-//            int choice2 = scanner.nextInt();
-//            if (choice2 == 1) {
-//                //借书
-////                LibSystem.get().currentUser.borrowBook();
-//            } else if (choice2 == 2) {
-//                //还书
-////                LibSystem.get().currentUser.returnBook();
-//            }
-//        } else if (choice1 == 2) {//查询自己借的书
-//
-//            int choice2 =scanner.nextInt();
-//            if (choice2 == 1) {
-//                //查看自己所有借的书
-//                List<Book> books = LibSystem.get().currentUser.getMyBorrowedBooks();
-//                for (Book book : books) {
-//                    System.out.println(book.toString());
-//                }
-//            } else if (choice2 == 2) {
-//                //分类查看自己的书
-//                int type = 0;
-//                List<Book> books = LibSystem.get().currentUser.getMyBorrowedBooks(type);
-//                for (Book book : books) {
-//                    System.out.println(book.toString());
-//                }
-//            }
-//        } else if (choice1 == 3) {//查询图书馆的书
-//
-//            int choice2 = scanner.nextInt();
-//            if (choice2 == 1) {
-//                //全部书的遍历
-//                //遍历每个书架
-//                List<BookSelf> bookSelfList = LibSystem.get().getLibrary().getBookSelves();//获取全部书架
-//                for (BookSelf bookSelf : bookSelfList) {
-//                    //遍历这个书架上所有的书
-//                    List<Book> books = bookSelf.getBooks();
-//                    for (Book book : books) {
-//                        System.out.println(book.toString());
-//                    }
-//                }
-//            } else if (choice2 == 2) {
-//                //指定分类查询
-//                String type = scanner.next();
-//                List<BookSelf> bookSelfList = LibSystem.get().getLibrary().getBookSelves();//获取全部书架
-//                for (BookSelf bookSelf : bookSelfList) {
-//                    //遍历每个书架打印并对应类型的书
-//
-//                }
-//            } else if (choice2 == 3) {
-//                //指定书架查询
-//            }
-//        }
-//
 
     }
 }
