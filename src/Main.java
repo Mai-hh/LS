@@ -39,9 +39,10 @@ public class Main {
         //获取第0个书架
 //        for (Book book : LibSystem.get().getLibrary().getBookSelf(0).getBooks()) {
 //            //书架里的书加入当前用户
-//            LibSystem.get().currentUser.borrowBook(book);
+            LibSystem.get().currentUser.borrowBook(book);
+//            LibSystem.get().getLibrary().getBookSelf(0 ).removeBook(book);
 //        }
-//        LibSystem.get().getLibrary().getBookSelf(0).getBooks().clear();
+//
 
 //        int n = LibSystem.get().getLibrary().getBookSelf(0).getBooks().size();
 //        for (int i = 0; i < n; i++) {
