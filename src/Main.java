@@ -50,7 +50,7 @@ public class Main {
 //            LibSystem.get().currentUser.borrowBook(book);
 //            LibSystem.get().getLibrary().getBookSelf(0).removeBook(book.getId());
 //        }
-
+        //用迭代器遍历
         Iterator<Book> bookIteratorA = LibSystem.get().getLibrary().getBookSelf(0).getBooks().listIterator();
         while (bookIteratorA.hasNext()) {
             LibSystem.get().currentUser.borrowBook(bookIteratorA.next());
@@ -82,10 +82,6 @@ public class Main {
         //注册用户b
         LibSystem.get().userLogin("b", "bbb");
         //获取第0个书架
-//        for (Book book : LibSystem.get().getLibrary().getBookSelf(0).getBooks()) {
-//            //书架里的书加入当前用户
-//            LibSystem.get().currentUser.borrowBook(book);
-//        }
         Iterator<Book> bookIteratorB = LibSystem.get().getLibrary().getBookSelf(0).getBooks().listIterator();
         while (bookIteratorB.hasNext()) {
             LibSystem.get().currentUser.borrowBook(bookIteratorB.next());
@@ -101,7 +97,6 @@ public class Main {
             for (Book book : bookSelf.getBooks()) {
                 if (book.getName().equals("ddd")) {
                     //借走"ddd"
-//                    LibSystem.get().currentUser.borrowBook(book);
                     dddId = book.getId();
                     dddShelf = LibSystem.get().getLibrary().getBookSelves().indexOf(bookSelf);
                     dddIsFound = true;
