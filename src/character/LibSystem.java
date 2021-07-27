@@ -4,9 +4,11 @@ import entity.Book;
 import entity.ComicBook;
 import entity.NovelBook;
 import entity.ProgrammingBook;
+import library.BookSelf;
 import library.Library;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -113,6 +115,76 @@ public class LibSystem {
             return;
         }
         availableBooks.add(book);
+    }
+
+    public void createBookShelf() {
+        getLibrary().addBookSelves(new BookSelf());
+    }
+
+    public void borrowAllBookByShelf(int index) {
+        Iterator<Book> bookIteratorA = getLibrary().getBookSelf(index).getBooks().listIterator();
+        while (bookIteratorA.hasNext()) {
+            currentUser.borrowBook(bookIteratorA.next());
+            bookIteratorA.remove();
+        }
+    }
+
+    public void borrowBookByBookName(String bookName) {
+        //遍历每个书架
+        boolean isFound = false;
+        int id = 0;
+        int shelfIndex = 0;
+        for (BookSelf bookSelf : getLibrary().getBookSelves()) {
+            //遍历这个书架上所有的书
+            if (isFound == true) break;
+            for (Book book : bookSelf.getBooks()) {
+                if (book.getName().equals(bookName)) {
+                    //用户获得"eee"
+                    currentUser.borrowBook(book);
+                    id = book.getId();
+                    shelfIndex = getLibrary().getBookSelves().indexOf(bookSelf);
+                    isFound = true;
+                    break;
+                }
+            }
+        }
+        if (isFound) {
+            getLibrary().getBookSelves().get(shelfIndex).removeBook(id);
+        }
+    }
+
+    public void addBookToShelfFromAvailableBookShelf(int BookShelfIndex, int bookIndex) {
+        addBookToBookSelf(BookShelfIndex, getAvailableBooks().get(bookIndex));
+    }
+
+    public void printUserBooks(String username, String password) {
+        userLogin(username, password);
+        System.out.println(username + "的所有书: " + currentUser.getMyBorrowedBooks().toString());
+    }
+
+    public void printUserBooks(String username, String password, int type) {
+        userLogin(username, password);
+        System.out.println(username + "的小说: " + currentUser.getMyBorrowedBooks(type));
+    }
+
+    public void setAllBookQuality(int quality) {
+        for (BookSelf bookSelf : getLibrary().getBookSelves()) {
+            //遍历这个书架上所有的书
+            for (Book book : bookSelf.getBooks()) {
+                //质量全部设成50
+                book.setQuality(quality);
+            }
+        }
+    }
+
+    public void printAllBookMessage() {
+        for (BookSelf bookSelf : getLibrary().getBookSelves()) {
+            //遍历这个书架上所有的书
+            System.out.println("第" + (getLibrary().getBookSelves().indexOf(bookSelf) + 1) + "个书架: ");
+            for (Book book : bookSelf.getBooks()) {
+                System.out.println(book.toString());
+            }
+        }
     }
 
     //删除书本
